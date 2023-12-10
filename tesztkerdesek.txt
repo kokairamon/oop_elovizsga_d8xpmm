@@ -1,6 +1,6 @@
-Név:
-Szak:
-Neptun azonosító:
+Név: László-Kókai Ramón
+Szak: üzemmérnök-informatikus (BProf) (2022/23/1)
+Neptun azonosító: D8XPMM
 
 
 1. Mi a helyes módja egy osztálypéldány attribútumának elérésének Pythonban?
@@ -9,7 +9,7 @@ a) Class.attribute
 b) Class->attribute
 c) Class::attribute
 d) instance.attribute
-Válasz:
+Válasz: a
 
 
 2. Mikor használjuk a 'pass' kulcsszót Pythonban?
@@ -18,7 +18,7 @@ a) Hurok létrehozásakor
 b) Egy üres blokk létrehozásához
 c) Egy kivétel elkapásakor
 d) Változó inicializálásakor
-Válasz:
+Válasz: b
 
 
 3.Mi történik Pythonban, ha egy osztályban nem definiáljuk a __init__ metódust?
@@ -27,7 +27,7 @@ a) A program hibát generál
 b) Az osztály nem használható
 c) Az osztály automatikusan kap egy alapértelmezett __init__ metódust
 d) Az osztály minden metódusa hibás lesz
-Válasz:
+Válasz: c
 
 
 4. Mire szolgál az init metódus Pythonban?
@@ -36,7 +36,7 @@ a) Egy osztály példányának inicializálására
 b) Egy osztály törlésére
 c) Az osztály statikus metódusainak definiálására
 d) Egy osztály metódusainak futtatására
-Válasz:
+Válasz: a
 
 
 5. Melyik NEM egy Python adattípus?
@@ -45,7 +45,7 @@ a) list
 b) set
 c) map
 d) tuple
-Válasz:
+Válasz: c
 
 
 6. Melyik Python kulcsszót használjuk az öröklődés megvalósításához?
@@ -54,7 +54,7 @@ a) class Child(Parent):
 b) super
 c) inherits
 d) extends
-Válasz:
+Válasz: a
 
 
 7.Mi a célja az egységbezárásnak (encapsulation) az OOP-ban?
@@ -63,7 +63,7 @@ a) Az adatok és metódusok elrejtése a külvilág elől
 b) Objektumok közötti kommunikáció javítása
 c) Az öröklődés megkönnyítése
 d) A program futási sebességének növelése
-Válasz:
+Válasz: a
 
 
 8. Milyen típusú a Factory design pattern?
@@ -72,7 +72,7 @@ a) Létrehozási
 b) Szerkezeti
 c) Viselkedési
 d) Iteratív
-Válasz:
+Válasz: a
 
 
 9. Melyik nem egy Python beépített kivételkezelő szerkezet?
@@ -81,7 +81,7 @@ a) try...except
 b) try...finally
 c) try...catch
 d) try...except...finally
-Válasz:
+Válasz: c
 
 
 10. Mire szolgál a @property dekorátor Pythonban?
@@ -90,7 +90,7 @@ a) Egy metódust priváttá tesz
 b) Egy metódust osztályszintűvé tesz
 c) Getterek és setterek létrehozása attribútumokhoz
 d) Az osztály attribútumainak titkosítása
-Válasz:
+Válasz: c
 
 
 11. Mi az Adapter design pattern célja?
@@ -99,7 +99,7 @@ a) Két inkompatibilis interfész összekapcsolása
 b) Objektumok gyorsabb létrehozása
 c) Kód ismétlésének csökkentése
 d) Programozási hibák automatikus javítása
-Válasz:
+Válasz: a
 
 
 12. Hogyan hozunk létre egy új osztálypéldányt Pythonban?
@@ -108,7 +108,7 @@ a) ClassName.new()
 b) ClassName()
 c) new ClassName()
 d) ClassName.create()
-Válasz:
+Válasz: b
 
 
 13. Mi a Singleton pattern alapvető tulajdonsága?
@@ -117,7 +117,7 @@ a) Több példány létrehozása
 b) Egyetlen globálisan elérhető példány biztosítása
 c) Különböző típusú objektumok létrehozása
 d) Az objektumok többszörös öröklődése
-Válasz:
+Válasz: b
 
 
 14. Melyik kijelentés igaz az absztrakt osztályokra Pythonban?
@@ -126,7 +126,7 @@ a) Absztrakt osztályokat lehet példányosítani
 b) Absztrakt osztályokban minden metódusnak absztraktnak kell lennie
 c) Absztrakt osztályokat nem lehet örökíteni
 d) Absztrakt osztályok absztrakt metódusokat tartalmaznak, amelyeket a leszármazottaknak kell implementálniuk
-Válasz:
+Válasz: a
 
 
 15. Miért hasznosak a design pattern-ök a szoftverfejlesztésben?
@@ -135,7 +135,7 @@ a) Megnövelik a kód futási sebességét
 b) Megkönnyítik az összetett rendszerek dokumentálását
 c) Javítják a kód újrafelhasználhatóságát és karbantarthatóságát
 d) Csökkentik a szoftver licencköltségeit
-Válasz:
+Válasz: c
 
 
 16. Mi a "class" kulcsszó szerepe Pythonban?
@@ -144,7 +144,7 @@ a) Fájl kezelés
 b) Modul importálás
 c) Osztály létrehozása
 d) Függvény definiálás
-Válasz:
+Válasz: c
 
 17. Mi a különbség az attribútum és a metódus között egy osztályban?
 
@@ -153,7 +153,7 @@ b) Az attribútumok konstruktorok, a metódusok pedig destruktorok
 c) Az attribútumok csak osztályváltozók, a metódusok pedig példányváltozók
 d) Nincs különbség, mindkettő ugyanazt a célt szolgálja
 
-Válasz:
+Válasz: a
 
 18. Mi az OOP célja az alábbiakból?
 
@@ -161,7 +161,7 @@ a) Eljárási, procedurális programozás kiegészítése
 b) Adatbázis kezelés
 c) Alacsony szintű memóriakezelés
 d) Grafikus felhasználói felület kialakítása
-Válasz:
+Válasz: a
 
 19. Miért használunk öröklődést (inheritance) az OOP-ban?
 
@@ -169,7 +169,7 @@ a) Az osztályok egyszerűbbé válnak
 b) Kód újrafelhasználhatósága és kódmegosztás
 c) Biztonsági okokból
 d) Adatbázis optimalizálás
-Válasz:
+Válasz: b
 
 20. Melyik kulcsszóval hozhatunk létre egy konstans attribútumot egy osztályban Pythonban?
 
@@ -177,4 +177,4 @@ a) const
 b) final
 c) constant
 d) Nem létezik külön kulcsszó, konvenció szerint nagybetűvel írjuk
-Válasz:
+Válasz: d
