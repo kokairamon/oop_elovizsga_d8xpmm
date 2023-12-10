@@ -146,7 +146,12 @@ class Kolcsonzo:
     def print_menu_lemondas(self):
         print("[Kölcsönzés lemondása]")
         self.kolcsonzesek_listazasa(csak_lemondhato=True)
-        lemondando = int(input("Add meg a lemondandó kölcsönzést: "))
+        print("Add meg a lemondandó kölcsönzés számát, vagy 0-t a visszalépéshez!")
+        lemondando = int(input("Kölcsönzés száma: "))
+        if lemondando == 0:
+            self.print_fomenu()
+            return
+
         self.kolcsonzesek[lemondando - 1].lemondva = True
         print("A kölcsönzés lemondásra került!")
         self.print_fomenu()
