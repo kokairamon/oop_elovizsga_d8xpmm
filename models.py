@@ -29,6 +29,7 @@ class Kolcsonzes:
         self.szemely_neve = szemely
         self.bicikli_id = bicikli_index
         self.datum = datum
+        self.dij = 0
         self.lemondva = False
 
     def __str__(self):
@@ -68,6 +69,13 @@ class Kolcsonzo:
             self.print_fomenu()
         elif menupont == 3:
             self.print_menu_foglalas_hozzad()
+        elif menupont == 4:
+            self.print_menu_lemondas()
+        elif menupont == 5:
+            self.kolcsonzesek_listazasa()
+            self.print_fomenu()
+        else:
+            self.print_fomenu()
 
 
     def print_menu_bicikli_hozzad(self):
@@ -100,12 +108,19 @@ class Kolcsonzo:
     def print_menu_foglalas_hozzad(self):
         print("[ Új kölcsönzés hozzáadása ]")
         self.biciklik_listazasa()
-        bicikli_index = int(input("Add meg a választott kerékpár számát: "))
+        print("Add meg a választott kerékpár számát, vagy írj 0-t a visszalépéshez!")
+        bicikli_index = int(input("Kerékpár száma: "))
+
+        if(bicikli_index == 0):
+            self.print_fomenu()
+            return
+
+        bicikli = self.biciklik[bicikli_index - 1]
 
         datum_helyes = False
 
         while not datum_helyes:
-            valasztott_datum = input("Kölcsönués napja (pl. 2024-02-12): ")
+            valasztott_datum = input("Kölcsönzés napja (pl. 2024-02-12): ")
             datum = datetime.datetime.strptime(valasztott_datum, "%Y-%m-%d").date()
             datum_helyes = self.datum_ellenorzese(datum)
             if not datum_helyes:
@@ -113,16 +128,29 @@ class Kolcsonzo:
 
         foglalas_helyes = self.foglalas_ellenorzese(bicikli_index, datum)
         if foglalas_helyes:
-            uj_kolcsonzes = Kolcsonzes()
-            uj_kolcsonzes.szemely_neve = input("Kölcsönző személy neve: ")
-            uj_kolcsonzes.bicikli_id = bicikli_index
-            uj_kolcsonzes.datum = datum
+            nev = input("Kölcsönző személy neve: ")
+            uj_kolcsonzes = Kolcsonzes(szemely=nev, bicikli_index=bicikli_index, datum=datum)
+            uj_kolcsonzes.dij = bicikli.ar
             self.kolcsonzesek.append(uj_kolcsonzes)
+            print("A kölcsönzés rögzítve!")
+            print(f"A kölcsönzési díj a választott kerékpárra: {uj_kolcsonzes.dij} Ft")
+
+
+            self.print_fomenu()
+            return
         else:
             print("A megadott kerékpár már le van foglalva erre a napra!")
+            print("Válassz másik kerékpárt és/vagy dátumot!")
+            self.print_menu_foglalas_hozzad()
 
-
-
+    def print_menu_lemondas(self):
+        print("[Kölcsönzés lemondása]")
+        self.kolcsonzesek_listazasa(csak_lemondhato=True)
+        lemondando = int(input("Add meg a lemondandó kölcsönzést: "))
+        self.kolcsonzesek[lemondando - 1].lemondva = True
+        print("A kölcsönzés lemondásra került!")
+        self.print_fomenu()
+        return
 
     def biciklik_listazasa(self):
         print("[Kerékpárok]")
@@ -131,6 +159,23 @@ class Kolcsonzo:
         for bicikli in self.biciklik:
             index = index + 1
             print(f"#{index}\t{bicikli.tipus}\t{bicikli.allapot}\t{bicikli.szin}\t{bicikli.ar}")
+
+    def kolcsonzesek_listazasa(self, csak_lemondhato = False):
+        print("[Kölcsönzések]")
+        print("ID\tDátum\tSzemély\tKerékpár típusa\tDíj\tLemondva?")
+        index = 0
+        for kolcsonzes in self.kolcsonzesek:
+            index = index + 1
+            bicikli = self.biciklik[kolcsonzes.bicikli_id-1]
+            lemondas = "Igen" if kolcsonzes.lemondva else "Nem"
+
+            mutat = True
+            if csak_lemondhato:
+                if kolcsonzes.lemondva or kolcsonzes.datum < datetime.date.today():
+                    mutat = False
+
+            if mutat:
+             print(f"#{index}\t{kolcsonzes.datum}\t{kolcsonzes.szemely_neve}\t{bicikli.tipus}\t{kolcsonzes.dij} Ft\t{lemondas}")
 
     def foglalas_ellenorzese(self, bicikli_index, datum):
         for kolcsonzes in self.kolcsonzesek:
